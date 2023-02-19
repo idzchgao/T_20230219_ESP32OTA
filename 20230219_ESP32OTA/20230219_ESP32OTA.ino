@@ -5,10 +5,10 @@
 const char * ssid = "JOEGHOME";
 const char * password = "sll32401";
 
-WiFiClient client;
+//WiFiClient client;
 HTTPClient https;
 
-String FirmwareVer = "2.3";
+String FirmwareVer = "2.4";
 
 #define URL_fw_Version "https://raw.githubusercontent.com/idzchgao/T_20230219_ESP32OTA/main/ver.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/idzchgao/T_20230219_ESP32OTA/main/fw.bin"
@@ -121,12 +121,6 @@ void firmwareUpdate(void) {
 int FirmwareVersionCheck(void) {
   String payload;
   int httpCode;
-//  String fwurl = "";
-//  fwurl += URL_fw_Version;
-//  fwurl += "?";
-//  fwurl += String(rand());
-//  Serial.println(fwurl);
-//  WiFiClientSecure * client = new WiFiClientSecure;
   
   if (https.begin(URL_fw_Version)) 
   { // HTTPS      
